@@ -1,0 +1,82 @@
+:root{
+  color-scheme:dark;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:#090d0c;
+  color:#edf3f0;
+  --panel:#111816;
+  --panel-2:#17201d;
+  --line:#2b3934;
+  --muted:#9baba5;
+  --accent:#d6ff63;
+  --accent-ink:#142006;
+  --danger:#ff8b8b;
+  --tile:#e9eee9;
+}
+*{box-sizing:border-box}
+html,body{min-height:100%}
+body{margin:0;background:radial-gradient(circle at 50% -10%,#1b2924 0,#0c1210 38%,#080b0a 72%);color:#edf3f0}
+button,a{font:inherit}
+button{color:inherit}
+a{color:inherit}
+.app-shell{width:min(1180px,calc(100% - 28px));margin:0 auto;padding:24px 0 38px}
+.topbar{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;margin-bottom:18px;padding:10px 4px}
+.brand-mark,.empty-mark{display:grid;place-items:center;width:54px;height:54px;border-radius:16px;background:var(--accent);color:var(--accent-ink);font-weight:950;letter-spacing:-.05em;box-shadow:0 10px 30px #0008}
+.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;color:var(--muted);font-weight:800}
+h1{margin:1px 0 0;font-size:clamp(1.55rem,4vw,2.35rem);line-height:1}
+.topbar p{margin:5px 0 0;color:var(--muted)}
+.download-link,.full-game{text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:10px 14px;background:#0d1311;font-weight:800;white-space:nowrap}
+.download-link:hover,.full-game:hover{border-color:var(--accent);color:var(--accent)}
+main{display:grid;gap:14px}
+.panel,.board-wrap{border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,#131b18,#0e1412);box-shadow:0 20px 50px #0004}
+.panel{padding:18px}
+.panel-title{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.panel-title>span{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:#26352f;color:var(--accent);font-weight:900}
+.panel-title h2{margin:0;font-size:1rem}
+.panel-title p{margin:3px 0 0;color:var(--muted);font-size:.88rem}
+.import-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+button{border:1px solid var(--line);background:#18221e;border-radius:13px;padding:10px 14px;cursor:pointer;font-weight:800}
+button:hover:not(:disabled){border-color:#60736b;background:#1c2823}
+button.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+button.primary:hover:not(:disabled){filter:brightness(1.05)}
+button.ghost{background:transparent}
+button.danger{color:var(--danger)}
+.library-stats{margin-left:auto;display:flex;gap:12px;color:var(--muted);font-size:.9rem}
+.library-stats strong{color:#fff}
+.levels{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.level-card{text-align:left;min-height:88px;display:flex;flex-direction:column;gap:7px;justify-content:center;padding:14px}
+.level-card b{font-size:.98rem}
+.level-card small{color:var(--muted);line-height:1.25}
+.level-card.active{border-color:var(--accent);box-shadow:inset 0 0 0 1px #d6ff6340}
+.level-card.locked{opacity:.42;cursor:not-allowed;filter:saturate(.5)}
+.level-card.locked::after{content:"Scarica il gioco";margin-top:2px;color:var(--accent);font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+.level-actions{display:flex;align-items:center;gap:12px;margin-top:14px}
+button.big{padding:13px 22px;min-width:190px}
+.full-game{font-size:.86rem}
+.board-wrap{overflow:hidden}
+.board-head{display:flex;justify-content:space-between;gap:14px;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line);background:#0f1613}
+.board-head>div:first-child{display:flex;flex-direction:column;gap:3px}
+.board-head small{color:var(--muted)}
+.board-tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.stats{display:flex;gap:12px;margin-right:4px;color:var(--muted);font-size:.84rem}
+.stats b{color:#fff}
+.tool-btn{padding:8px 11px;font-size:.8rem}
+.board{position:relative;min-height:560px;overflow:hidden;background:radial-gradient(circle at 50% 45%,#21342c 0,#17241f 34%,#111a17 72%),linear-gradient(90deg,#ffffff03 1px,transparent 1px),linear-gradient(#ffffff03 1px,transparent 1px);background-size:auto,28px 28px,28px 28px}
+.board.empty{display:grid;place-items:center}
+.empty-state{text-align:center;color:var(--muted)}
+.empty-state .empty-mark{margin:0 auto 12px;opacity:.65}
+.tile{position:absolute;padding:0;border:0;border-radius:10px;background:var(--tile);box-shadow:calc(var(--thickness,8px) * .55) var(--thickness,8px) 0 #6f7e73,0 10px 22px #0007;transform:translateZ(0);overflow:visible;transition:transform .14s ease,filter .14s ease,opacity .2s ease;isolation:isolate}
+.tile::after{content:"";position:absolute;inset:3px;border-radius:8px;border:1px solid #ffffff9a;pointer-events:none;z-index:4}
+.tile img{position:absolute;inset:4px;width:calc(100% - 8px);height:calc(100% - 8px);object-fit:cover;border-radius:7px;background:#ccd4ce;pointer-events:none}
+.tile.free{cursor:pointer}
+.tile.free:hover{transform:translateY(-4px) scale(1.02);filter:brightness(1.07)}
+.tile.blocked{cursor:not-allowed;filter:brightness(.66) saturate(.75)}
+.tile.selected{outline:4px solid var(--accent);outline-offset:3px;filter:brightness(1.08)}
+.tile.hint-match{animation:hintPulse .72s ease-in-out infinite alternate;outline:4px solid #fff39a;outline-offset:3px}
+.tile.wrong{outline:4px solid #ff7474;outline-offset:3px;animation:wrong .18s linear 2}
+.tile.removed{opacity:0;pointer-events:none;transform:scale(.86)}
+@keyframes hintPulse{to{transform:translateY(-5px) scale(1.035);filter:brightness(1.2)}}
+@keyframes wrong{50%{transform:translateX(4px)}}
+footer{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:.78rem;padding:14px 4px 0}
+footer a{text-decoration:none;color:#cbd7d2}
+@media (max-width:860px){.levels{grid-template-columns:repeat(2,1fr)}.topbar{grid-template-columns:auto 1fr}.download-link{display:none}.board-head{align-items:flex-start;flex-direction:column}.board-tools{width:100%;justify-content:flex-start}.board{min-height:520px}}
+@media (max-width:540px){.app-shell{width:min(100% - 14px,1180px);padding-top:10px}.panel{padding:14px;border-radius:17px}.levels{grid-template-columns:1fr}.library-stats{width:100%;margin-left:0}.level-actions{align-items:stretch;flex-direction:column}button.big,.full-game{width:100%;text-align:center}.stats{width:100%;justify-content:space-between;margin:0}.board{min-height:500px}.brand-mark{width:46px;height:46px;border-radius:13px}}
