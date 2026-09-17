@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0c1110">
+  <title>MyJong Gallery — Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">MJ</div>
+      <div>
+        <div class="eyebrow">ShiduLab 2026 · demo pubblica</div>
+        <h1>MyJong Gallery</h1>
+        <p>Le tue foto diventano tessere.</p>
+      </div>
+      <a class="download-link" href="https://github.com/ShiduLab/MyJong-Gallery/releases/tag/v26" target="_blank" rel="noopener noreferrer">Scarica il gioco</a>
+    </header>
+
+    <main>
+      <section class="panel import-panel">
+        <div class="panel-title">
+          <span>1</span>
+          <div>
+            <h2>La tua galleria</h2>
+            <p>Le immagini restano nel browser. Nessun upload.</p>
+          </div>
+        </div>
+
+        <div class="import-row">
+          <button id="pickPhotos" class="primary" type="button">Scegli foto</button>
+          <button id="clearGallery" class="ghost danger" type="button">Svuota foto</button>
+          <input id="photoInput" type="file" accept="image/*" multiple hidden>
+          <div class="library-stats" aria-live="polite">
+            <strong id="photoCount">0 foto</strong>
+            <span id="pairPreview">0 coppie</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel level-panel">
+        <div class="panel-title">
+          <span>2</span>
+          <div>
+            <h2>Scegli il livello</h2>
+            <p>La demo pubblica apre solo Identità.</p>
+          </div>
+        </div>
+
+        <div class="levels">
+          <button class="level-card active" data-level="1" type="button">
+            <b>1 · Identità</b>
+            <small>Stessa foto, stesso ritaglio.</small>
+          </button>
+          <button class="level-card locked" data-level="2" type="button" disabled title="Scarica il gioco">
+            <b>2 · Appartenenza</b>
+            <small>Stessa foto, due punti di vista.</small>
+          </button>
+          <button class="level-card locked" data-level="3" type="button" disabled title="Scarica il gioco">
+            <b>3 · Essere</b>
+            <small>Due foto diverse dello stesso evento.</small>
+          </button>
+          <button class="level-card locked" data-level="4" type="button" disabled title="Scarica il gioco">
+            <b>4 · Memoria</b>
+            <small>Dorso coperto, due tessere per turno.</small>
+          </button>
+        </div>
+
+        <div class="level-actions">
+          <button id="startGame" class="primary big" type="button">NUOVA PARTITA</button>
+          <a class="full-game" href="https://github.com/ShiduLab/MyJong-Gallery/releases/tag/v26" target="_blank" rel="noopener noreferrer">Scarica il gioco completo</a>
+        </div>
+      </section>
+
+      <section class="board-wrap">
+        <div class="board-head">
+          <div>
+            <b id="statusText">Scegli almeno 2 foto.</b>
+            <small id="statusSub">Demo · Identità · Tartaruga</small>
+          </div>
+          <div class="board-tools">
+            <div class="stats">
+              <span>Mosse <b id="moves">0</b></span>
+              <span>Coppie <b id="matches">0</b>/<b id="totalPairs">0</b></span>
+              <span>Tempo <b id="timer">00:00</b></span>
+            </div>
+            <button id="hintBtn" class="tool-btn" type="button">HINT</button>
+            <button id="jumpBtn" class="tool-btn" type="button">JUMP</button>
+          </div>
+        </div>
+
+        <div id="board" class="board empty" aria-live="polite">
+          <div class="empty-state">
+            <div class="empty-mark">MJ</div>
+            <p>Le tessere nasceranno qui.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>MyJong Gallery · demo locale</span>
+      <a href="https://github.com/ShiduLab" target="_blank" rel="noopener noreferrer">ShiduLab</a>
+    </footer>
+  </div>
+
+  <script src="demo-core.js"></script>
+  <script src="demo-app.js"></script>
+</body>
+</html>
