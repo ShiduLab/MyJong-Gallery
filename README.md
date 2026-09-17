@@ -14,6 +14,18 @@ MyJong usa una meccanica ispirata al Mahjong per rendere giocabili quattro modi 
 
 ---
 
+## Prova online
+
+È disponibile una **demo pubblica ridotta** direttamente nel browser:
+
+➡️ **[Prova MyJong Gallery](https://myjong-gallery-demo-gigiopex-8740.vercel.app)**
+
+La demo usa solo il livello **1 · Identità**, la disposizione **Tartaruga** e mantiene **HINT** e **JUMP**. Le immagini selezionate restano locali nel browser: non vengono caricate su un server.
+
+Le modalità **Appartenenza**, **Essere** e **Memoria** restano visibili nella demo ma rimandano al download della versione completa.
+
+---
+
 ## Il concept
 
 ### Identità
